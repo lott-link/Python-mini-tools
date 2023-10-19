@@ -3,9 +3,11 @@
 
 from web3 import Web3
 
+# select RPC depend on your network
 RPC_url = "https://polygon-rpc.com/"
 web3 = Web3(Web3.HTTPProvider(RPC_url))
 
+# Just fancy commenet for showing the connection
 if web3.is_connected():
     print("-" * 50)
     print("Connection Successful")

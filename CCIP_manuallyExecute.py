@@ -190,9 +190,10 @@ tx = contract.functions.manuallyExecute(
     {"chainId": Chain_id, "from": account_1, "nonce": nonce, "gas": 1000000}
 )
 
-
+# Signe transaction with your wallet
 signed_tx = web3.eth.account.sign_transaction(tx, private_key1)
-
+# Send transaction to the RPC
 tx_hash = web3.eth.send_raw_transaction(signed_tx.rawTransaction)
+# Wait for geting transaction receipt
 tx_receipt = web3.eth.wait_for_transaction_receipt(tx_hash)
 print(tx_receipt)

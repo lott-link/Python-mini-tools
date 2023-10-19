@@ -16,12 +16,12 @@ else:
     print("Connection Failed")
 
 
-# need to chain by you own Account
+# need to change by you own Account that has some facet
 account_1 = "{your Account address}"
 private_key1 = "{your Account Private Key}"
 
+# some confige
 from web3.gas_strategies.rpc import rpc_gas_price_strategy
-
 web3.eth.set_gas_price_strategy(rpc_gas_price_strategy)
 
 
@@ -162,8 +162,8 @@ print(callResult)
 
 
 # Create Transaction, change parameter by your own CCIP tx data. you can find parameter by searching same transaction you want to Manually execute on tenderly.co
-# Sample for same transaction that reverted for gas. check this  https://dashboard.tenderly.co/tx/polygon/0x5d7b75e1eb59e7884e5cc4902e8143e8eb0b5b473fa537ee2e534e7a744c96c5
-# Change all parameter with you own message.
+# Sample for some transaction that reverted for gas. check this  https://dashboard.tenderly.co/tx/polygon/0x5d7b75e1eb59e7884e5cc4902e8143e8eb0b5b473fa537ee2e534e7a744c96c5
+# Change all parameter with you own message. you need to search transaction hash of your CCIP reverted transaction on tenderly
 # you should need to change sourceChainSelector, nounce and gasLimitOverrides.
 tx = contract.functions.manuallyExecute(
     [
